@@ -30,11 +30,11 @@ const Routes = createBrowserRouter([
       },
       {
         path: '/my-product',
-        element: <MyProduct></MyProduct>
+        element: <PrivateRoute><MyProduct></MyProduct></PrivateRoute>
       },
       {
         path: '/product-add',
-        element: <ProductAdd></ProductAdd>
+        element: <PrivateRoute><ProductAdd></ProductAdd></PrivateRoute>
       },
       {
         path: '/sign-in',
