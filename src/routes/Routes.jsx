@@ -6,7 +6,9 @@ import Home from '../Pages/Home/Home/Home';
 import Blog from "../Pages/Blog/Blog";
 import SignIn from '../Pages/Auth/SignIn/SignIn';
 import SignUp from '../Pages/Auth/SignUp/SignUp';
-
+import ProductList from'../Pages/Products/Product/List'
+import ProductAdd from'../Pages/Products/Product/Upsert'
+import MyProduct from'../Pages/Products/Product/UserWiseProduct'
 
 const Routes = createBrowserRouter([
   {
@@ -21,6 +23,18 @@ const Routes = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog></Blog>
+      },
+      {
+        path: '/product-list',
+        element: <ProductList></ProductList>
+      },
+      {
+        path: '/my-product',
+        element: <MyProduct></MyProduct>
+      },
+      {
+        path: '/product-add',
+        element: <ProductAdd></ProductAdd>
       },
       {
         path: '/sign-in',
