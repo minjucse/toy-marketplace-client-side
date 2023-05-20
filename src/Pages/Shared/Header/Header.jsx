@@ -29,12 +29,16 @@ const Header = () => {
               <li >
                 <Link>All Toys</Link>
               </li>
-              <li >
-                <Link>My Toys</Link>
-              </li>
-              <li >
-                <Link>Add A Toy</Link>
-              </li>
+              {
+                userInfo && <div>
+                  <li >
+                    <Link>My Toys</Link>
+                  </li>
+                  <li >
+                    <Link>Add A Toy</Link>
+                  </li>
+                </div>
+              }
               <li>
                 <Link to="/blog">Blogs</Link>
               </li>
