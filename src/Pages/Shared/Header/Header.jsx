@@ -61,7 +61,7 @@ const Header = () => {
               <Link>All Toys</Link>
             </li>
             {
-              userInfo && <div>
+              userInfo && <div className='flex'>
                 <li >
                   <Link>My Toys</Link>
                 </li>
@@ -83,8 +83,8 @@ const Header = () => {
             <Link to="/sign-in" className="btn btn-outline btn-warning">Sign In</Link>
           }
           {
-            userInfo && <div className='user-profile tooltip' data-tip="hello">
-              <img src={user.photoURL} alt="" />
+            userInfo && <div className='user-profile tooltip tooltip-bottom' data-tip={userInfo.displayName}>
+              <img src={userInfo.photoURL} alt="" />
             </div>
           }
         </div>
