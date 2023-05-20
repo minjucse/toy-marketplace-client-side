@@ -65,11 +65,17 @@ const SignUp = () => {
                 </label>
                 <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
               </div>
+              <div className="form-control flex">
+                <label className="label">
+                  <span className="label-text">{<>Accept <Link to="/terms">Terms and Conditions</Link> </>}</span>
+                </label>
+                <input type="checkbox" name="accept" className="checkbox checkbox-primary"  onClick={handleAccepted}/>
+              </div>
               <div className="form-control mt-6">
-                <input className="btn btn-primary" type="submit" value="Sign Up" />
+                <input className="btn btn-primary" type="submit" value="Sign Up" disabled={!accepted}/>
               </div>
             </form>
-            <p className='my-4 text-center'>Already Have an Account? <Link className='text-orange-600 font-bold' to="/login">Sign In</Link> </p>
+            <p className='my-4 text-center'>Already Have an Account? <Link className='text-orange-600 font-bold' to="/sign-in">Sign In</Link> </p>
           </div>
         </div>
       </div>
