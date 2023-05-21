@@ -27,20 +27,20 @@ const Header = () => {
                 <Link className={location.pathname === '/'? 'bg-base-200': ''} to="/">Home</Link>
               </li>
               <li >
-                <Link to="/product-list">All Toys</Link>
+                <Link className={location.pathname === '/'? 'bg-base-200': ''} to="/product-list">All Toys</Link>
               </li>
               {
                 userInfo && <div>
                   <li >
-                    <Link to="/my-product">My Toys</Link>
+                    <Link className={location.pathname === '/'? 'bg-base-200': ''} to="/my-product">My Toys</Link>
                   </li>
                   <li >
-                    <Link to="/product-add">Add A Toy</Link>
+                    <Link className={location.pathname === '/'? 'bg-base-200': ''} to="/product-add">Add A Toy</Link>
                   </li>
                 </div>
               }
               <li>
-                <Link to="/blog">Blogs</Link>
+                <Link className={location.pathname === '/'? 'bg-base-200': ''} to="/blog">Blogs</Link>
               </li>
             </ul>
           </div>
@@ -58,20 +58,20 @@ const Header = () => {
               <Link className={location.pathname === '/'? 'bg-base-200': ''} to="/">Home</Link>
             </li>
             <li >
-                <Link to="/product-list">All Toys</Link>
+                <Link className={location.pathname === '/'? 'bg-base-200': ''} to="/product-list">All Toys</Link>
               </li>
               {
                 userInfo && <div className='flex'>
                   <li >
-                    <Link to="/my-product">My Toys</Link>
+                    <Link className={location.pathname === '/'? 'bg-base-200': ''} to="/my-product">My Toys</Link>
                   </li>
                   <li >
-                    <Link to="/product-add">Add A Toy</Link>
+                    <Link className={location.pathname === '/'? 'bg-base-200': ''} to="/product-add">Add A Toy</Link>
                   </li>
                 </div>
               }
             <li>
-              <Link to="/blog">Blogs</Link>
+              <Link className={location.pathname === '/'? 'bg-base-200': ''} to="/blog">Blogs</Link>
             </li>
           </ul>
         </div>
