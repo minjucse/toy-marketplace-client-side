@@ -7,7 +7,8 @@ const Banner = () => {
                 <img src="https://images.unsplash.com/photo-1530325553241-4f6e7690cf36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" className="w-full" />
                 <div className="absolute  flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                     <div className='text-white space-y-7 pl-12 w-1/2'>
-                        <h2 className='text-6xl font-bold'>Affordable Price For Car Servicing</h2>
+                        <p></p>
+                        <h2 className='text-4xl font-bold'>Affordable Price For Toy</h2>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                         <div>
                             <button className="btn btn-outline btn-secondary">Buy Now</button>
@@ -23,7 +24,8 @@ const Banner = () => {
                 <img src="https://images.unsplash.com/photo-1633007400080-f37dfabbf2e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" className="w-full" />
                 <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                     <div className='text-white space-y-7 pl-12 w-1/2'>
-                        <h2 className='text-6xl font-bold'>Affordable Price For Car Servicing</h2>
+                        <p></p>
+                        <h2 className='text-6xl font-bold'>Affordable Price For Toy</h2>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                         <div>
                             <button className="btn btn-outline btn-secondary">Buy Now</button>

@@ -48,7 +48,7 @@ const Home = () => {
                             products?.map((item, index) => (
                                 <div key={index}>
                                     <div className="card w-96 bg-base-100 shadow-xl" >
-                                        <figure><img className='h-[250px]' src={item.imageURL} alt="Shoes" /></figure>
+                                        <figure><img className='w-[100%] h-[250px]' src={item.imageURL} alt="Shoes" /></figure>
                                         <div className="card-body">
                                             <h2 className="card-title">
                                                 {item.name}!
