@@ -1,13 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { FaRegEye } from 'react-icons/fa';
 
 const List = () => {
+
+
+  const handleSearch = event => {
+    event.preventDefault();
+    const form = event.target;
+    const searchKeyword = form.searchKeyword.value;
+  };
   return (
     <div>
       <div className='card  w-[80%] mx-auto shadow-2xl bg-base-100'>
         <h2 className='text-center text-3xl'>All Toys </h2>
+        <div className='w-[30%] pl-8'>
+          <form onSubmit={handleSearch} className='flex items-center'>
+            <div className="form-control">
+              <label className="label">
+                
+              </label>
+              <input type="text" name='searchKeyword' placeholder="name" className="input input-bordered" />
+            </div>
 
+            <div className="form-control mt-4 ml-2">
+              <input className="btn btn-accent" type="submit" value="Search" />
+            </div>
+          </form>
+        </div>
         <div className="card-body">
           <div className="overflow-x-auto w-full">
             <table className="table w-full">
