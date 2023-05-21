@@ -54,7 +54,7 @@ const Home = () => {
                                                 {item.name}!
                                             </h2>
                                             <p>
-                                                {item.price}!
+                                               price: {item.price}
                                             </p>
                                             <div className='mb-4'>
                                                 <Rating
