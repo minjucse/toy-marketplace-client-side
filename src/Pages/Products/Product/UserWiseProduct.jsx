@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-
+import { Link } from 'react-router-dom';
 import { FaRegEye } from 'react-icons/fa';
 import { FiEdit } from 'react-icons/fi';
 import { FaTimesCircle } from 'react-icons/fa';
@@ -13,7 +13,7 @@ const UserWiseProduct = () => {
   const { userInfo } = useContext(AuthContext);
   const [products, setProduct] = useState([]);
 
-  let url = `http://localhost:5000/my-product/${userInfo?.email}`;
+  let url = `https://server-phi-sooty.vercel.app/my-product/${userInfo?.email}`;
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
@@ -23,7 +23,7 @@ const UserWiseProduct = () => {
   const handleDelete = id => {
     const proceed = confirm('Are You sure you want to delete');
     if (proceed) {
-      fetch(`http://localhost:5000/product/${id}`, {
+      fetch(`https://server-phi-sooty.vercel.app/product/${id}`, {
         method: 'DELETE'
       })
         .then(res => res.json())
@@ -40,7 +40,7 @@ const UserWiseProduct = () => {
   return (
     <div>
       <div className='card  w-[80%] mx-auto shadow-2xl bg-base-100'>
-        <h2 className='text-center text-3xl'>All Toys </h2>
+        <h2 className='text-center text-3xl'>My Toys </h2>
 
         <div className="card-body">
           <div className="overflow-x-auto w-full">
@@ -88,9 +88,8 @@ const UserWiseProduct = () => {
                       {item.quantity}
                     </td>
                     <th>
-                      <button className="btn btn-square  btn-success btn-sm mr-2">
-                        <FaRegEye></FaRegEye>
-                      </button>
+                      <Link className='btn btn-square  btn-success btn-sm mr-2' to={`/product-detail/${item._id}`}> <FaRegEye></FaRegEye></Link>
+
                       <button className="btn btn-square  btn-warning btn-sm mr-2">
                         <FiEdit></FiEdit>
                       </button>

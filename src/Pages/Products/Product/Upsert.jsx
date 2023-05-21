@@ -14,8 +14,8 @@ const Upsert = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-
-    fetch("http://localhost:5000/add-product", {
+    event.preventDefault();
+    fetch("https://server-phi-sooty.vercel.app/add-product", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -25,7 +25,7 @@ const Upsert = () => {
         console.log(result);
         toast.success("Add Your Product!");
       });
-    console.log(data);
+   
   };
 
   return (

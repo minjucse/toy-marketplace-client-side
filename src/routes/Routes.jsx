@@ -7,9 +7,10 @@ import Home from '../Pages/Home/Home/Home';
 import Blog from "../Pages/Blog/Blog";
 import SignIn from '../Pages/Auth/SignIn/SignIn';
 import SignUp from '../Pages/Auth/SignUp/SignUp';
-import ProductList from'../Pages/Products/Product/List'
-import ProductAdd from'../Pages/Products/Product/Upsert'
-import MyProduct from'../Pages/Products/Product/UserWiseProduct'
+import ProductList from'../Pages/Products/Product/List';
+import ProductAdd from'../Pages/Products/Product/Upsert';
+import ProductDetail from'../Pages/Products/Product/Details';
+import MyProduct from'../Pages/Products/Product/UserWiseProduct';
 
 const Routes = createBrowserRouter([
   {
@@ -32,11 +33,16 @@ const Routes = createBrowserRouter([
       {
         path: '/my-product',
         element: <PrivateRoute><MyProduct></MyProduct></PrivateRoute>
-        
+
       },
       {
         path: '/product-add',
         element: <PrivateRoute><ProductAdd></ProductAdd></PrivateRoute>
+      },
+      {
+        path: '/product-detail/:id',
+        element: <PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
+        loader: ({params}) => fetch(`https://server-phi-sooty.vercel.app/detail-product/${params.id}`)
       },
       {
         path: '/sign-in',

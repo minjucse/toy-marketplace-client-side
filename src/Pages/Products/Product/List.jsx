@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import { Link } from 'react-router-dom';
 import { FaRegEye } from 'react-icons/fa';
 import useTitle from '../../../hooks/useTitle';
 
@@ -8,7 +8,7 @@ const List = () => {
   const [products, setProduct] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/all-product")
+    fetch("https://server-phi-sooty.vercel.app/all-product")
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -19,7 +19,7 @@ const List = () => {
     event.preventDefault();
     const form = event.target;
     const searchKeyword = form.searchKeyword.value;
-    fetch(`http://localhost:5000/searchProduct/${searchKeyword}`)
+    fetch(`https://server-phi-sooty.vercel.app/searchProduct/${searchKeyword}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -90,10 +90,7 @@ const List = () => {
                       {item.quantity}
                     </td>
                     <td>
-                      <button className="btn btn-square  btn-success btn-sm">
-                        <FaRegEye></FaRegEye>
-                      </button>
-
+                      <Link className='btn btn-square  btn-success btn-sm mr-2' to={`/product-detail/${item._id}`}> <FaRegEye></FaRegEye></Link>
                     </td>
                   </tr>
                 ))}
