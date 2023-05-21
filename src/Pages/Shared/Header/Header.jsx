@@ -27,15 +27,15 @@ const Header = () => {
                 <Link to="/">Home</Link>
               </li>
               <li >
-                <Link>All Toys</Link>
+                <Link to="/product-list">All Toys</Link>
               </li>
               {
                 userInfo && <div>
                   <li >
-                    <Link>My Toys</Link>
+                    <Link to="/my-product">My Toys</Link>
                   </li>
                   <li >
-                    <Link>Add A Toy</Link>
+                    <Link to="/product-add">Add A Toy</Link>
                   </li>
                 </div>
               }
@@ -58,19 +58,18 @@ const Header = () => {
               <Link to="/">Home</Link>
             </li>
             <li >
-              <Link>All Toys</Link>
-            </li>
-            {
-              userInfo && <div className='flex'>
-                <li >
-                  <Link>My Toys</Link>
-                </li>
-                <li >
-                  <Link>Add A Toy</Link>
-                </li>
-              </div>
-            }
-
+                <Link to="/product-list">All Toys</Link>
+              </li>
+              {
+                userInfo && <div className='flex'>
+                  <li >
+                    <Link to="/my-product">My Toys</Link>
+                  </li>
+                  <li >
+                    <Link to="/product-add">Add A Toy</Link>
+                  </li>
+                </div>
+              }
             <li>
               <Link to="/blog">Blogs</Link>
             </li>

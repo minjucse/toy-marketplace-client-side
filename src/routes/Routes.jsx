@@ -1,5 +1,6 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
+import PrivateRoute from "./PrivateRoute";
 import PageNotFount from "../Pages/PageNotFount/PageNotFount";
 import Main from "../Pages/Layout/Main";
 import Home from '../Pages/Home/Home/Home';
