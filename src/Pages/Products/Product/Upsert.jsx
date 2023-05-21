@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { AuthContext } from '../../../providers/AuthProvider';
 import useTitle from '../../../hooks/useTitle';
 
@@ -14,7 +15,7 @@ const Upsert = () => {
 
   const onSubmit = (data) => {
 
-    fetch("http://localhost:5000/post-product", {
+    fetch("http://localhost:5000/add-product", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -22,6 +23,7 @@ const Upsert = () => {
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
+        toast.success("Add Your Product!");
       });
     console.log(data);
   };

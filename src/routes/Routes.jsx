@@ -32,6 +32,7 @@ const Routes = createBrowserRouter([
       {
         path: '/my-product',
         element: <PrivateRoute><MyProduct></MyProduct></PrivateRoute>
+        
       },
       {
         path: '/product-add',

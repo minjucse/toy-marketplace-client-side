@@ -1,15 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { FaRegEye } from 'react-icons/fa';
 import useTitle from '../../../hooks/useTitle';
 
 const List = () => {
   useTitle('All Toy');
+  const [products, setProduct] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/all-product")
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+      });
+  }, []);
 
   const handleSearch = event => {
     event.preventDefault();
     const form = event.target;
     const searchKeyword = form.searchKeyword.value;
+    fetch(`http://localhost:5000/searchProduct/${searchKeyword}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+      });
   };
   return (
     <div>
@@ -19,7 +33,7 @@ const List = () => {
           <form onSubmit={handleSearch} className='flex items-center'>
             <div className="form-control">
               <label className="label">
-                
+
               </label>
               <input type="text" name='searchKeyword' placeholder="name" className="input input-bordered" />
             </div>
@@ -40,6 +54,7 @@ const List = () => {
                       #
                     </label>
                   </th>
+                  <th>Image</th>
                   <th>Toy Name</th>
                   <th>Sub-category</th>
                   <th>Price</th>
@@ -48,42 +63,41 @@ const List = () => {
                 </tr>
               </thead>
               <tbody>
-                {/* row 1 */}
-                <tr>
-                  <th>
-                    <label>
-                      1
-                    </label>
-                  </th>
-                  <td>
-                    <div className="flex items-center space-x-3">
-                      <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
-                          <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
+                {products?.map((item, index) => (
+                  <tr key={index}>
+                    <th>
+                      <label>
+                        {index + 1}
+                      </label>
+                    </th>
+                    <td>
+                      <div className="flex items-center space-x-3">
+                        <div className="avatar">
+                          <div className="mask mask-squircle w-12 h-12">
+                            <img src={item.imageURL} alt="Image" />
+                          </div>
                         </div>
                       </div>
-                      <div>
-                        <div className="font-bold">Hart Hagerty</div>
-                        <div className="text-sm opacity-50">United States</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    Zemlak, Daniel and Leannon
-                    <br />
-                    <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-                  </td>
-                  <td>Purple</td>
-                  <th>
+                    </td>
+                    <td>
+                      {item.name}
+                    </td>
+                    <td> {item.category}</td>
+                    <td>
+                      {item.price}
+                    </td>
+                    <td>
+                      {item.quantity}
+                    </td>
+                    <td>
+                      <button className="btn btn-square  btn-success btn-sm">
+                        <FaRegEye></FaRegEye>
+                      </button>
 
-                  </th>
-                  <th>
-                    <button className="btn btn-square  btn-success btn-sm">
-                      <FaRegEye></FaRegEye>
-                    </button>
+                    </td>
+                  </tr>
+                ))}
 
-                  </th>
-                </tr>
 
               </tbody>
               {/* foot */}
@@ -94,6 +108,7 @@ const List = () => {
                       #
                     </label>
                   </th>
+                  <th>Image</th>
                   <th>Toy Name</th>
                   <th>Sub-category</th>
                   <th>Price</th>
