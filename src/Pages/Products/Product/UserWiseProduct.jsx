@@ -6,6 +6,7 @@ import { FaTimesCircle } from 'react-icons/fa';
 
 import useTitle from '../../../hooks/useTitle';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { toast } from "react-toastify";
 
 const UserWiseProduct = () => {
   useTitle('My Toy');
@@ -18,6 +19,23 @@ const UserWiseProduct = () => {
       .then(res => res.json())
       .then(data => setProduct(data))
   }, [url]);
+
+  const handleDelete = id => {
+    const proceed = confirm('Are You sure you want to delete');
+    if (proceed) {
+      fetch(`http://localhost:5000/product/${id}`, {
+        method: 'DELETE'
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.deletedCount > 0) {
+            toast.success('deleted successful');
+            const results = products.filter(x => x._id !== id);
+            setProduct(results);
+          }
+        })
+    }
+  }
 
   return (
     <div>
@@ -76,7 +94,7 @@ const UserWiseProduct = () => {
                       <button className="btn btn-square  btn-warning btn-sm mr-2">
                         <FiEdit></FiEdit>
                       </button>
-                      <button className="btn btn-square  btn-error btn-sm">
+                      <button className="btn btn-square  btn-error btn-sm" onClick={() => handleDelete(item._id)} >
                         <FaTimesCircle></FaTimesCircle>
                       </button>
 
