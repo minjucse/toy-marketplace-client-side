@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../../providers/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 const Upsert = () => {
+  useTitle('Add Toy');
   const { userInfo } = useContext(AuthContext);
   const {
     register,
@@ -26,7 +28,6 @@ const Upsert = () => {
 
   return (
     <div>
-
       <div className='card  w-[80%] mx-auto shadow-2xl bg-base-100'>
         <h2 className='text-center text-3xl'>Add Toy:  </h2>
 
@@ -68,13 +69,13 @@ const Upsert = () => {
                 <label className="label">
                   <span className="label-text">Price</span>
                 </label>
-                <input type="number" name='photo' placeholder="price" className="input input-bordered" autoComplete='off' />
+                <input type="number" {...register("price")} placeholder="price" className="input input-bordered" autoComplete='off' />
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Rating</span>
                 </label>
-                <input type="number" name='photo' placeholder="rating" className="input input-bordered" autoComplete='off' />
+                <input type="text" {...register("rating")}  placeholder="rating" className="input input-bordered" autoComplete='off' />
               </div>
 
               <div className="form-control">

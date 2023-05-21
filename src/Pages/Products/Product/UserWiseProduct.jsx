@@ -2,8 +2,10 @@ import React from 'react'
 import { FaRegEye } from 'react-icons/fa';
 import { FiEdit } from 'react-icons/fi';
 import { FaTimesCircle } from 'react-icons/fa';
+import useTitle from '../../../hooks/useTitle';
 
 const UserWiseProduct = () => {
+  useTitle('MyToy');
   return (
     <div>
       <div className='card  w-[80%] mx-auto shadow-2xl bg-base-100'>

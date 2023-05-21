@@ -1,7 +1,7 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import PrivateRoute from "./PrivateRoute";
-import PageNotFount from "../Pages/PageNotFount/PageNotFount";
+import PageNotFound from "../Pages/PageNotFount/PageNotFound";
 import Main from "../Pages/Layout/Main";
 import Home from '../Pages/Home/Home/Home';
 import Blog from "../Pages/Blog/Blog";
@@ -15,7 +15,7 @@ const Routes = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement: <PageNotFount/>,
+    errorElement: <PageNotFound/>,
     children: [
       {
         path: '/',
